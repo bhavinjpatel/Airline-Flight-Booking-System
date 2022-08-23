@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="page-header">
+    <h1>Hello, {% if user.is_authenticated %}{{ user.first_name}}{% else %}Stranger{% endif %}!</h1>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.add_airplane') }}">Add new airplane</a>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.get_airplanes') }}">Get airplanes list</a>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.add_airport') }}">Add new airport</a>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.get_airports') }}">Get airports list</a>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.add_flight') }}">Add new flight schedule</a>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.get_flights') }}">Get flight schedule list</a>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.change_status') }}">Change flight status</a>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.get_bookings') }}">Get flight bookings list</a>
+</div>
+
+{% endblock %}

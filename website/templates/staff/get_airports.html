@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}All Airports{% endblock %}
+{% block content %}
+<table class="table" style="width: 100%">
+    <th> Airport Code</th>
+    <th> Country</th>
+    <th> City </th>
+    <th> Name </th>
+
+    {% for line in data %}
+    <tr>
+        <td>{{line.airport_code}}</td>
+        <td>{{line.country}}</td>
+        <td>{{line.name}}</td>
+        <td>{{line.city}}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

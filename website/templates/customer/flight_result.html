@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Flight Result{% endblock %}
+{% block content %}
+<table class="table" style="width: 100%">
+    <th> Flight</th>
+    <th> Start Time</th>
+    <th> End Time </th>
+    <th> Destination </th>
+    <th> Source </th>
+    <th> Status </th>
+    <th> Destination Airport </th>
+    <th> Source Airport </th>
+
+    {% for line in data %}
+    <tr>
+        <td>{{line.flight_number}}</td>
+        <td>{{line.start_time}}</td>
+        <td>{{line.end_time}}</td>
+        <td>{{line.destination}}</td>
+        <td>{{line.source}}</td>
+        <td>{{line.status}}</td>
+        <td>{{line.destination_airport}}</td>
+        <td>{{line.source_airport}}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

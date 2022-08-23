@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>Hello, {% if user.is_authenticated %}{{ user.first_name}}{% else %}Stranger{% endif %}!</h1>
+</div>
+<h1>Flight Info</h1>
+<div class="container">
+    <a href="{{ url_for('views.search_flight') }}">Search Flights</a>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.book_flight') }}">Book Flight</a>
+</div>
+<div class="container">
+    <a href="{{ url_for('views.my_bookings') }}">My Bookings</a>
+</div>
+{% endblock %}

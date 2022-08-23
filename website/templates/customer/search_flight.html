@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Search Flight{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>Search Flight</h1>
+</div>
+<div class="col-md-4">
+    {{ wtf.quick_form(form, button_map={'submit': 'primary'}) }}
+</div>
+
+{% endblock %}

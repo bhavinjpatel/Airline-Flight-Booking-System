@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}My Flights{% endblock %}
+{% block content %}
+<table class="table" style="width: 100%">
+    <th> Flight</th>
+    <th> Start Time</th>
+    <th> End Time </th>
+    <th> Destination </th>
+    <th> Source </th>
+    <th> Status </th>
+    <th> Destination Airport </th>
+    <th> Source Airport </th>
+    <th> Booking Time </th>
+    <th> Seats </th>
+
+    {% for booking,flight, source_airport, destination_airport in data %}
+    <tr>
+        <td>{{flight.flight_number}}</td>
+        <td>{{flight.start_time}}</td>
+        <td>{{flight.end_time}}</td>
+        <td>{{flight.destination}}</td>
+        <td>{{flight.source}}</td>
+        <td>{{flight.status}}</td>
+        <td>{{destination_airport}}</td>
+        <td>{{source_airport}}</td>
+        <td>{{booking.booking_time}}</td>
+        <td>{{booking.seats}}</td>
+        <td>
+            <button type="button" class="close" onClick="deleteBooking({{ booking.id }})">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

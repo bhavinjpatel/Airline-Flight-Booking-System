@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}All Airplanes{% endblock %}
+{% block content %}
+<table class="table" style="width: 100%">
+    <th> Plane ID</th>
+    <th> Model</th>
+    <th> Airline Name</th>
+
+    {% for airplane, airline in data %}
+    <tr>
+        <td>{{airplane.plane_id}}</td>
+        <td>{{airplane.model}}</td>
+        <td>{{airline.name}}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
